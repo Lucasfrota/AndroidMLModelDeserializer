@@ -8,17 +8,17 @@ import java.io.ObjectInputStream;
 
 import machinelearning.ElasticClassifier;
 
-public class Deserializer {
+public class Deserializer<T> {
 
     final static String TAG = "DeserializerTag";
 
-    public static ElasticClassifier getMLModel(Context context, String fileName) {
+    public T getMLModel(Context context, String fileName) {
 
         try {
             ObjectInputStream localObjectInputStream = new ObjectInputStream(context.getAssets().open(fileName));
-            ElasticClassifier localElasticClassifier = (ElasticClassifier)localObjectInputStream.readObject();
+            T object = (T)localObjectInputStream.readObject();
             localObjectInputStream.close();
-            return localElasticClassifier;
+            return object;
         } catch (Exception e) {
             e.printStackTrace();
             Log.d(TAG, e.toString());

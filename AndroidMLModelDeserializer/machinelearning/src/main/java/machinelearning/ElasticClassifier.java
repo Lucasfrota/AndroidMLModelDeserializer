@@ -56,7 +56,6 @@ public class ElasticClassifier implements Serializable{
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(2);
         return df.format(mLC.getDistibuition(index) * 100).toString();
-
     }
 
     public String getTechniqueType(){
