@@ -8,7 +8,7 @@ import machinelearning.ElasticClassifier;
 
 public class Deserializer {
 
-    private ElasticClassifier getClassifierInterface(Context context, String fileName) {
+    public static ElasticClassifier getMLModel(Context context, String fileName) {
 
         try {
             ObjectInputStream localObjectInputStream = new ObjectInputStream(context.getAssets().open(fileName));
