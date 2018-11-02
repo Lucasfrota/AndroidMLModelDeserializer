@@ -78,7 +78,11 @@ public class MachineLearningClassifierComponent<T extends Classifier> implements
     public void learn(Instances instances){
         try{
 
+            instances.randomize(new java.util.Random(42));
+
             splitDataset(instances, 70);
+
+            //System.out.println();
 
             technique = cls.newInstance();
             technique.buildClassifier(instancesTrain);
@@ -137,20 +141,6 @@ public class MachineLearningClassifierComponent<T extends Classifier> implements
 
         try{
             correctlyClassified = evaluation.pctCorrect();
-            System.out.println("\nRecall");
-
-            System.out.println(evaluation.recall(0));
-            System.out.println(evaluation.recall(1));
-            System.out.println(evaluation.recall(2));
-            System.out.println("\nprecision");
-            System.out.println(evaluation.precision(0));
-            System.out.println(evaluation.precision(1));
-            System.out.println(evaluation.precision(2));
-            System.out.println("\nF1 score");
-            System.out.println( 2 * evaluation.precision(0) * evaluation.recall(0)/ (evaluation.precision(0) + evaluation.recall(0)) );
-            System.out.println( 2 * evaluation.precision(1) * evaluation.recall(1)/ (evaluation.precision(1) + evaluation.recall(1)) );
-            System.out.println( 2 * evaluation.precision(2) * evaluation.recall(2)/ (evaluation.precision(2) + evaluation.recall(2)) );
-            System.out.println("");
         }catch(Exception e){
             e.printStackTrace();
         }

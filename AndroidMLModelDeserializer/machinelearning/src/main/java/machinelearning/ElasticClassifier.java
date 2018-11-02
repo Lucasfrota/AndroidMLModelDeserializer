@@ -1,9 +1,10 @@
 package machinelearning;
 
+import Exceptions.ParametersException;
 import java.io.Serializable;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
-
 import weka.classifiers.Classifier;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.MultilayerPerceptron;
@@ -14,7 +15,6 @@ import weka.core.Instance;
 import weka.core.Instances;
 
 public class ElasticClassifier implements Serializable{
-
 
     private Type type;
     private MachineLearningClassifierComponent mLC;
@@ -52,10 +52,15 @@ public class ElasticClassifier implements Serializable{
         return mLC.confusionMatrixString(title);
     }
 
+    public String confusionMatrix(){
+        return mLC.confusionMatrixString("Confusion Matrix");
+    }
+
     public String getReliability(int index){
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(2);
         return df.format(mLC.getDistibuition(index) * 100).toString();
+
     }
 
     public String getTechniqueType(){
