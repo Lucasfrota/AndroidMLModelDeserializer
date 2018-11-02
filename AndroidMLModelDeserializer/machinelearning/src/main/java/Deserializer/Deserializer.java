@@ -12,7 +12,7 @@ public class Deserializer<T> {
 
     final static String TAG = "DeserializerTag";
 
-    public T getMLModel(Context context, String fileName) {
+    public T getObject(Context context, String fileName) {
 
         try {
             ObjectInputStream localObjectInputStream = new ObjectInputStream(context.getAssets().open(fileName));
