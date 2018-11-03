@@ -1,8 +1,8 @@
 # AndroidMLModelDeserializer
 
-This tool allows you to use pretrained models in you android App
+This tool allows you to use pretrained machine learning models in you android App easily
 
-# How to use
+# How to install
 
 Add in your project build.gradle at the end of repositories
 ```
@@ -22,6 +22,11 @@ dependencies {
     ...
 }
 ```
+
+# How to import model file
+
+The first step to use a pretrained ML model in your Android App is importing the model file, for this you'll need to create assets folder in your Android Studio project by selecting in the top menu File > new > Folder > Assets Folder. Once it is done just paste your model file to this folder.
+
 
 # How to use the model
 
