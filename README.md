@@ -47,4 +47,4 @@ val predictedClass = elasticClassifier!!.classify(Arrays.asList(5.1, 3.5, 1.4, 0
 
 # How to create a custom ML Model
 
-To train a custom ML Model you may follow this [tutorial](https://github.com/Lucasfrota/MachineLearningElasticComponent).
+To train a custom ML Model you may follow this [tutorial](https://github.com/Lucasfrota/MachineLearningElasticComponent#ml-model-serialization).
