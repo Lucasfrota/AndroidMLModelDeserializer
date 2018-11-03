@@ -25,7 +25,7 @@ dependencies {
 
 # How to import model file
 
-The first step to use a pretrained ML model in your Android App is importing the model file, for this you'll need to create assets folder in your Android Studio project by selecting in the top menu File > new > Folder > Assets Folder. Once it is done just paste your model file to this folder.
+The first step to use a pretrained ML model in your Android App is importing the model file, for this you'll need to create assets folder in your Android Studio project by selecting in the top menu **File > new > Folder > Assets Folder**. Once it is done just paste your model file to this folder, if you don't have your own model you can use this [iris sample model](https://github.com/Lucasfrota/AndroidMLModelDeserializer/blob/master/MLModels/iris.model) for testing.
 
 
 # How to use the model
